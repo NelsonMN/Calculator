@@ -15,6 +15,10 @@ body {
     margin: 0;
 }
 
+button:hover {
+    opacity: 0.8;
+}
+
 .alter {
     width: 178px;
 }
