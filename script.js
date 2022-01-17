@@ -1,5 +1,7 @@
 // Constants:
+
 current = document.querySelector(".current");
+history = document.querySelector(".history");
 
 
 // Functions to Calculate
@@ -13,27 +15,28 @@ function subtract(x, y) {
 };
 
 function multiply(x, y) {
-    return x * y
+    return (x * y)
 };
 
 function divide(x, y) {
-    return x / y
+    return (x / y)
 };
 
-function operate(operator, x, y) {
+function operate(x, operator, y) {
     if (operator === "+") {
-        return add(x,y)
+        return add(x, y)
     } else if (operator === "-") {
-        return subtract(x,y)
-    } else if (operator === "*") {
-        return multiply(x,y)
+        return subtract(x, y)
+    } else if (operator === "x") {
+        return multiply(x, y)
     } else if (operator === "/") {
-        return divide(x,y)
+        return divide(x, y)
     }
 };
 
 
 // Click Events:
+
 const nine = document.getElementById("nine");
 nine.addEventListener("click", () => {
     current.textContent += "9";
@@ -98,7 +101,7 @@ decimal.addEventListener("click", () => {
 
 // Operator Click Events:
 
-const addition = document.getElementById("addition");
+const addition = document.getElementById("add");
 addition.addEventListener("click", () => {
     if (current.textContent != "" && 
     !current.textContent.includes("-") &&
@@ -109,7 +112,7 @@ addition.addEventListener("click", () => {
     }
 )
 
-const subtractor = document.getElementById("subtractor");
+const subtractor = document.getElementById("subtract");
 subtractor.addEventListener("click", () => {
     if (current.textContent != "" && 
     !current.textContent.includes("-") &&
@@ -120,7 +123,7 @@ subtractor.addEventListener("click", () => {
     }
 )
 
-const multiplier = document.getElementById("multiplier");
+const multiplier = document.getElementById("multiply");
 multiplier.addEventListener("click", () => {
     if (current.textContent != "" && 
     !current.textContent.includes("-") &&
@@ -131,7 +134,7 @@ multiplier.addEventListener("click", () => {
     }
 )
 
-const divider = document.getElementById("divider");
+const divider = document.getElementById("divide");
 divider.addEventListener("click", () => {
     if (current.textContent != "" && 
     !current.textContent.includes("-") &&
@@ -158,3 +161,10 @@ del.addEventListener("click", () => {
 // Operator Functionality:
 
 const equality = document.getElementById("equality");
+equality.addEventListener("click", () => {
+    const expression = current.textContent.split(" ");
+    if (expression.length == 3) {
+        history.textContent = current.textContent;
+        current.textContent = operate(parseInt(expression[0]), expression[1], parseInt(expression[2]));
+    }
+})
