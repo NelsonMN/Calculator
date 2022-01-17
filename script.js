@@ -105,7 +105,7 @@ addition.addEventListener("click", () => {
     !current.textContent.includes("+") &&
     !current.textContent.includes("x") &&
     !current.textContent.includes("/")) {
-        current.textContent += "+";}
+        current.textContent += " + ";}
     }
 )
 
@@ -116,7 +116,7 @@ subtractor.addEventListener("click", () => {
     !current.textContent.includes("+") &&
     !current.textContent.includes("x") &&
     !current.textContent.includes("/")) {
-        current.textContent += "-";}
+        current.textContent += " - ";}
     }
 )
 
@@ -127,7 +127,7 @@ multiplier.addEventListener("click", () => {
     !current.textContent.includes("+") &&
     !current.textContent.includes("x") &&
     !current.textContent.includes("/")) {
-        current.textContent += "x";}
+        current.textContent += " x ";}
     }
 )
 
@@ -138,7 +138,7 @@ divider.addEventListener("click", () => {
     !current.textContent.includes("+") &&
     !current.textContent.includes("x") &&
     !current.textContent.includes("/")) {
-        current.textContent += "/";}
+        current.textContent += " / ";}
     }
 )
 
