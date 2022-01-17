@@ -86,16 +86,61 @@ zero.addEventListener("click", () => {
         }
 ); 
 
+const decimal = document.getElementById("decimal");
+decimal.addEventListener("click", () => {
+    if (current.textContent == "") {
+        current.textContent += "0.";}
+    else if (!current.textContent.includes(".")) {
+        current.textContent += ".";}
+    } 
+)
+    
+
 // Operator Click Events
 
 const addition = document.getElementById("addition");
+addition.addEventListener("click", () => {
+    if (current.textContent != "" && 
+    !current.textContent.includes("-") &&
+    !current.textContent.includes("+") &&
+    !current.textContent.includes("x") &&
+    !current.textContent.includes("/")) {
+        current.textContent += "+";}
+    }
+)
 
 const subtractor = document.getElementById("subtractor");
+subtractor.addEventListener("click", () => {
+    if (current.textContent != "" && 
+    !current.textContent.includes("-") &&
+    !current.textContent.includes("+") &&
+    !current.textContent.includes("x") &&
+    !current.textContent.includes("/")) {
+        current.textContent += "-";}
+    }
+)
 
 const multiplier = document.getElementById("multiplier");
+multiplier.addEventListener("click", () => {
+    if (current.textContent != "" && 
+    !current.textContent.includes("-") &&
+    !current.textContent.includes("+") &&
+    !current.textContent.includes("x") &&
+    !current.textContent.includes("/")) {
+        current.textContent += "x";}
+    }
+)
 
 const divider = document.getElementById("divider");
+divider.addEventListener("click", () => {
+    if (current.textContent != "" && 
+    !current.textContent.includes("-") &&
+    !current.textContent.includes("+") &&
+    !current.textContent.includes("x") &&
+    !current.textContent.includes("/")) {
+        current.textContent += "/";}
+    }
+)
 
-const decimal = document.getElementById("decimal");
 
 const equality = document.getElementById("equality");
