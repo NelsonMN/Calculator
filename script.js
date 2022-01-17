@@ -96,7 +96,7 @@ decimal.addEventListener("click", () => {
 )
     
 
-// Operator Click Events
+// Operator Click Events:
 
 const addition = document.getElementById("addition");
 addition.addEventListener("click", () => {
@@ -142,5 +142,19 @@ divider.addEventListener("click", () => {
     }
 )
 
+// Clear and Delete Events:
+
+const clear = document.querySelector(".clear");
+clear.addEventListener("click", () => {
+    current.textContent = "";
+})
+
+const del = document.querySelector(".delete");
+del.addEventListener("click", () => {
+    current.textContent = current.textContent.substring(0, current.textContent.length - 1)
+})
+
+
+// Operator Functionality:
 
 const equality = document.getElementById("equality");
