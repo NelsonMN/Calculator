@@ -40,7 +40,7 @@ function operate(x, operator, y) {
 const nine = document.getElementById("nine");
 nine.addEventListener("click", () => {
     if (current.textContent == "0") {
-        current.textContent = "9"
+        current.textContent = "9";
     } else {
         current.textContent += "9";
     }
@@ -49,7 +49,7 @@ nine.addEventListener("click", () => {
 const eight = document.getElementById("eight");
 eight.addEventListener("click", () => {
     if (current.textContent == "0") {
-        current.textContent = "8"
+        current.textContent = "8";
     } else {
         current.textContent += "8";
     }
@@ -58,7 +58,7 @@ eight.addEventListener("click", () => {
 const seven = document.getElementById("seven");
 seven.addEventListener("click", () => {
     if (current.textContent == "0") {
-        current.textContent = "7"
+        current.textContent = "7";
     } else {
         current.textContent += "7";
     }
@@ -67,7 +67,7 @@ seven.addEventListener("click", () => {
 const six = document.getElementById("six");
 six.addEventListener("click", () => {
     if (current.textContent == "0") {
-        current.textContent = "6"
+        current.textContent = "6";
     } else {
         current.textContent += "6";
     }
@@ -76,7 +76,7 @@ six.addEventListener("click", () => {
 const five = document.getElementById("five");
 five.addEventListener("click", () => {
     if (current.textContent == "0") {
-        current.textContent = "5"
+        current.textContent = "5";
     } else {
         current.textContent += "5";
     }
@@ -85,7 +85,7 @@ five.addEventListener("click", () => {
 const four = document.getElementById("four");
 four.addEventListener("click", () => {
     if (current.textContent == "0") {
-        current.textContent = "4"
+        current.textContent = "4";
     } else {
         current.textContent += "4";
     }
@@ -94,7 +94,7 @@ four.addEventListener("click", () => {
 const three = document.getElementById("three");
 three.addEventListener("click", () => {
     if (current.textContent == "0") {
-        current.textContent = "3"
+        current.textContent = "3";
     } else {
         current.textContent += "3";
     }
@@ -103,7 +103,7 @@ three.addEventListener("click", () => {
 const two = document.getElementById("two");
 two.addEventListener("click", () => {
     if (current.textContent == "0") {
-        current.textContent = "2"
+        current.textContent = "2";
     } else {
         current.textContent += "2";
     }
@@ -112,7 +112,7 @@ two.addEventListener("click", () => {
 const one = document.getElementById("one");
 one.addEventListener("click", () => {
     if (current.textContent == "0") {
-        current.textContent = "1"
+        current.textContent = "1";
     } else {
         current.textContent += "1";
     }
@@ -120,10 +120,13 @@ one.addEventListener("click", () => {
 
 const zero = document.getElementById("zero");
 zero.addEventListener("click", () => {
+    const expression = current.textContent.split(" ");
     if (!current.textContent.startsWith("0") && current.textContent != "") {
-        current.textContent += "0";}
-        }
-); 
+        current.textContent += "0";
+    } else if (expression.length == 3 && !expression[2].endsWith("0")) {
+        current.textContent += "0";
+    }
+}); 
 
 const decimal = document.getElementById("decimal");
 decimal.addEventListener("click", () => {
@@ -209,7 +212,12 @@ del.addEventListener("click", () => {
 const equality = document.getElementById("equality");
 equality.addEventListener("click", () => {
     const expression = current.textContent.split(" ");
-    if (expression.length == 3 && expression[2] != "") {
+    if (expression.length == 3 && current.textContent.endsWith("/ 0")) {
+        alert("Nice Try! You can't divide by 0!")
+        hist.textContent = "";
+        current.textContent = "0";
+    }
+    else if (expression.length == 3 && expression[2] != "") {
         hist.textContent = current.textContent;
         current.textContent = operate(Number(expression[0]), expression[1], Number(expression[2]));
     }
@@ -217,7 +225,6 @@ equality.addEventListener("click", () => {
 
 
 // Limiting amount of numbers on display:
-
 if (current.textContent.length > 21) {
     const numbers = document.querySelectorAll(".num")
     numbers.removeEventListener

@@ -65,12 +65,15 @@ body {
     width: 340px;
     justify-content: flex-end;
     padding: 10px;
-    font-size: 30px;
+    font-size: 25px;
 }
 
 .display {
     display: flex;
     flex-direction: column; 
+    flex-grow: 1;
+    inline-size: 360px;
+    overflow: hidden;
 }
 
 .delete {
@@ -102,6 +105,7 @@ body {
     justify-content: flex-end;
     padding: 10px;
     width: 340px;
+    
 }
 
 .lower-button-case {
