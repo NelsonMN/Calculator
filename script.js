@@ -1,7 +1,7 @@
 // Constants:
 
 current = document.querySelector(".current");
-history = document.querySelector(".history");
+hist = document.querySelector(".history");
 
 
 // Functions to Calculate
@@ -15,11 +15,11 @@ function subtract(x, y) {
 };
 
 function multiply(x, y) {
-    return (x * y)
+    return x * y
 };
 
 function divide(x, y) {
-    return (x / y)
+    return x / y
 };
 
 function operate(x, operator, y) {
@@ -39,47 +39,83 @@ function operate(x, operator, y) {
 
 const nine = document.getElementById("nine");
 nine.addEventListener("click", () => {
-    current.textContent += "9";
+    if (current.textContent == "0") {
+        current.textContent = "9"
+    } else {
+        current.textContent += "9";
+    }
 });
 
 const eight = document.getElementById("eight");
 eight.addEventListener("click", () => {
-    current.textContent += "8";
+    if (current.textContent == "0") {
+        current.textContent = "8"
+    } else {
+        current.textContent += "8";
+    }
 });
 
 const seven = document.getElementById("seven");
 seven.addEventListener("click", () => {
-    current.textContent += "7";
+    if (current.textContent == "0") {
+        current.textContent = "7"
+    } else {
+        current.textContent += "7";
+    }
 });
 
 const six = document.getElementById("six");
 six.addEventListener("click", () => {
-    current.textContent += "6";
+    if (current.textContent == "0") {
+        current.textContent = "6"
+    } else {
+        current.textContent += "6";
+    }
 });
 
 const five = document.getElementById("five");
 five.addEventListener("click", () => {
-    current.textContent += "5";
+    if (current.textContent == "0") {
+        current.textContent = "5"
+    } else {
+        current.textContent += "5";
+    }
 });
 
 const four = document.getElementById("four");
 four.addEventListener("click", () => {
-    current.textContent += "4";
+    if (current.textContent == "0") {
+        current.textContent = "4"
+    } else {
+        current.textContent += "4";
+    }
 });
 
 const three = document.getElementById("three");
 three.addEventListener("click", () => {
-    current.textContent += "3";
+    if (current.textContent == "0") {
+        current.textContent = "3"
+    } else {
+        current.textContent += "3";
+    }
 });
-
+ 
 const two = document.getElementById("two");
 two.addEventListener("click", () => {
-    current.textContent += "2";
+    if (current.textContent == "0") {
+        current.textContent = "2"
+    } else {
+        current.textContent += "2";
+    }
 });
 
 const one = document.getElementById("one");
 one.addEventListener("click", () => {
-    current.textContent += "1";
+    if (current.textContent == "0") {
+        current.textContent = "1"
+    } else {
+        current.textContent += "1";
+    }
 });
 
 const zero = document.getElementById("zero");
@@ -91,9 +127,7 @@ zero.addEventListener("click", () => {
 
 const decimal = document.getElementById("decimal");
 decimal.addEventListener("click", () => {
-    if (current.textContent == "") {
-        current.textContent += "0.";}
-    else if (!current.textContent.includes(".")) {
+    if (!current.textContent.includes(".")) {
         current.textContent += ".";}
     } 
 )
@@ -104,52 +138,64 @@ decimal.addEventListener("click", () => {
 const addition = document.getElementById("add");
 addition.addEventListener("click", () => {
     if (current.textContent != "" && 
-    !current.textContent.includes("-") &&
-    !current.textContent.includes("+") &&
-    !current.textContent.includes("x") &&
-    !current.textContent.includes("/")) {
-        current.textContent += " + ";}
+    !current.textContent.includes(" - ") &&
+    !current.textContent.includes(" + ") &&
+    !current.textContent.includes(" x ") &&
+    !current.textContent.includes(" / ")) {
+        current.textContent += " + ";
+    } else if (current.textContent == "") {
+        current.textContent += "0 + "
     }
-)
+})
 
 const subtractor = document.getElementById("subtract");
 subtractor.addEventListener("click", () => {
     if (current.textContent != "" && 
-    !current.textContent.includes("-") &&
-    !current.textContent.includes("+") &&
-    !current.textContent.includes("x") &&
-    !current.textContent.includes("/")) {
-        current.textContent += " - ";}
+    !current.textContent.includes(" - ") &&
+    !current.textContent.includes(" + ") &&
+    !current.textContent.includes(" x ") &&
+    !current.textContent.includes(" / ")) {
+        current.textContent += " - ";
+    } else if (current.textContent == "") {
+        current.textContent += "0 - "
     }
-)
+})
+
 
 const multiplier = document.getElementById("multiply");
 multiplier.addEventListener("click", () => {
     if (current.textContent != "" && 
-    !current.textContent.includes("-") &&
-    !current.textContent.includes("+") &&
-    !current.textContent.includes("x") &&
-    !current.textContent.includes("/")) {
-        current.textContent += " x ";}
+    !current.textContent.includes(" - ") &&
+    !current.textContent.includes(" + ") &&
+    !current.textContent.includes(" x ") &&
+    !current.textContent.includes(" / ")) {
+        current.textContent += " x ";
+    } else if (current.textContent == "") {
+        current.textContent += "0 x "
     }
-)
+})
+
 
 const divider = document.getElementById("divide");
 divider.addEventListener("click", () => {
     if (current.textContent != "" && 
-    !current.textContent.includes("-") &&
-    !current.textContent.includes("+") &&
-    !current.textContent.includes("x") &&
-    !current.textContent.includes("/")) {
-        current.textContent += " / ";}
+    !current.textContent.includes(" - ") &&
+    !current.textContent.includes(" + ") &&
+    !current.textContent.includes(" x ") &&
+    !current.textContent.includes(" / ")) {
+        current.textContent += " / ";
+    } else if (current.textContent == "") {
+        current.textContent += "0 / "
     }
-)
+})
+
 
 // Clear and Delete Events:
 
 const clear = document.querySelector(".clear");
 clear.addEventListener("click", () => {
-    current.textContent = "";
+    hist.textContent = "";
+    current.textContent = "0";
 })
 
 const del = document.querySelector(".delete");
@@ -163,8 +209,16 @@ del.addEventListener("click", () => {
 const equality = document.getElementById("equality");
 equality.addEventListener("click", () => {
     const expression = current.textContent.split(" ");
-    if (expression.length == 3) {
-        history.textContent = current.textContent;
-        current.textContent = operate(parseInt(expression[0]), expression[1], parseInt(expression[2]));
+    if (expression.length == 3 && expression[2] != "") {
+        hist.textContent = current.textContent;
+        current.textContent = operate(Number(expression[0]), expression[1], Number(expression[2]));
     }
 })
+
+
+// Limiting amount of numbers on display:
+
+if (current.textContent.length > 21) {
+    const numbers = document.querySelectorAll(".num")
+    numbers.removeEventListener
+}
