@@ -3,7 +3,6 @@
 current = document.querySelector(".current");
 hist = document.querySelector(".history");
 
-
 // Functions to Calculate
 
 function add(x, y) {
