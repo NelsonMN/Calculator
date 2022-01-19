@@ -130,10 +130,12 @@ zero.addEventListener("click", () => {
 
 const decimal = document.getElementById("decimal");
 decimal.addEventListener("click", () => {
-    if (!current.textContent.includes(".")) {
-        current.textContent += ".";}
-    } 
-)
+    const expression = current.textContent.split(" ");
+    if (!current.textContent.includes(".") || 
+    (expression.length == 3 && !expression[2].includes("."))) {
+        current.textContent += ".";
+    }
+});
     
 
 // Operator Click Events:
